@@ -1,0 +1,38 @@
+server {
+    
+   listen         80;
+   listen    443 ssl;
+   server_name api.dominio.dev;
+    
+    ssl_certificate     /etc/nginx/ssl/dominio.dev/dominioDev.pem;
+    ssl_certificate_key /etc/nginx/ssl/dominio.dev/dominioDev.key;
+    ssl_protocols       SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers         HIGH:!aNULL:!MD5;
+    
+   root /home/dominio/api.produto.com.br;
+   index index.php;
+    
+   location / {
+      try_files $uri /index.php$is_args$args;
+   }
+
+    location ~ ^/index\.php(/|$) {
+        fastcgi_pass   unix:/var/run/php/php7.0-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param HTTPS off;
+    }
+    location ~ \.php$ {
+        #return 404;
+   
+        fastcgi_pass   unix:/var/run/php/php7.0-fpm.sock;
+        fastcgi_split_path_info ^(.+\.php)(/.*)$;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param HTTPS off;
+    }
+
+     error_log /var/log/nginx/api.dominio.dev_error.log;
+    access_log /var/log/nginx/api.dominio.dev_access.log;
+}
