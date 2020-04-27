@@ -11,3 +11,7 @@
 [Download file com SSL](https://github.com/despossivel/nginxBlocks/blob/master/download-files%2Bssl)
 
 [Default server com PHP-CGI](https://github.com/despossivel/nginxBlocks/blob/master/default_server%2Bphp-fpm)
+
+
+
+[@despossivel](https://www.linkedin.com/in/despossivel/)
