@@ -1,15 +1,8 @@
 server {
-        listen 80;
-        listen [::]:80;
-        server_name direto.smgeo.com.br/files;
-        
-    listen    443 ssl;
-    ssl_certificate     /etc/nginx/ssl/smgeo.com.br/smgeo.pem;
-    ssl_certificate_key /etc/nginx/ssl/smgeo.com.br/smgeo.key;
-    ssl_protocols       SSLv3 TLSv1 TLSv1.1 TLSv1.2;
-    ssl_ciphers         HIGH:!aNULL:!MD5;
-    
-        root /home/niceplanet/files.smgeo.com.br;
+        listen 80 default_server;
+        listen [::]:80 default_server;
+     
+        root /root/download;
         index index.html;
  
    location / {
