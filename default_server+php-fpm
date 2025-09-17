@@ -5,7 +5,7 @@ server {
 	server_name domain.com.br domain.com.br www.domain.com.br;
 
 	# Caminho da pasta do site
-	root /home/pinpper/desafio.nutrofit.com.br/;
+	root /home/usr/domain.com.br/;
 	index index.php;
 
    location / {
