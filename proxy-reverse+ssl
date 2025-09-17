@@ -1,6 +1,6 @@
 server {
    listen         80;
-   server_name api-reanalise.smgeo.com.br;
+   server_name domain.com.br;
    
     listen              443 ssl;
     ssl_certificate     /etc/nginx/ssl/smgeo.com.br/smgeo.pem;
