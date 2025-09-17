@@ -2,7 +2,7 @@ server {
 	listen 80 default_server;
 	listen [::]:80 default_server;
 
-	server_name desafio.nutrofit.com.br nutrofit.com.br www.nutrofit.com.br;
+	server_name domain.com.br domain.com.br www.domain.com.br;
 
 	# Caminho da pasta do site
 	root /home/pinpper/desafio.nutrofit.com.br/;
